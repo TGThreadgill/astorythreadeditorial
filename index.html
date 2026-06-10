@@ -625,8 +625,14 @@
       .services__grid { grid-template-columns: 1fr; }
       .portfolio__intro-grid { grid-template-columns: 1fr; }
       .consult__grid { grid-template-columns: 1fr; }
-      .about__inner { grid-template-columns: 1fr; }
-      .about__portrait-wrap { max-width: 220px; }
+      .about__inner {
+        grid-template-columns: 1fr;
+        justify-items: center;
+      }
+      .about__portrait-wrap {
+        max-width: 340px;
+        width: 100%;
+      }
     }
     @media (max-width: 680px) {
       :root { --section-gap: 4rem; }
@@ -655,8 +661,8 @@
       .hero__content { padding-left: 1.25rem; padding-right: 1.25rem; }
       .hero__sub { font-size: 0.95rem; }
       .consult__steps li { font-size: 0.85rem; }
-      .about__portrait-wrap { max-width: 160px; }
-      .about__portrait-bg { right: -6px; bottom: -6px; top: 6px; left: 6px; }
+      .about__portrait-wrap { width: 100%; }
+      .about__portrait-bg { right: 0; bottom: -6px; top: 6px; left: 6px; }
     }
     @media (max-width: 380px) {
       .hero__title { font-size: clamp(2.2rem, 9vw, 3rem); }
@@ -1064,7 +1070,7 @@
         <div class="about__portrait-wrap">
           <div class="about__portrait-bg" aria-hidden="true"></div>
           <div class="about__portrait" aria-label="Portrait of Tarah Threadgill">
-            <img src="TThreadgill.png" alt="Tarah Threadgill" />
+            <img src="https://raw.githubusercontent.com/TGThreadgill/astorythreadeditorial/main/TThreadgill.png" alt="Tarah Threadgill" />
           </div>
         </div>
         <div>
@@ -1112,7 +1118,7 @@
 
   <!-- ░░ FOOTER ░░ -->
   <footer class="footer">
-    <p>© <span id="year"></span> Story Thread Editorial · Tarah Threadgill
+    <p>© <span id="year"></span> Story Thread Editorial · Tarah Threadgill · Built for <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a></p>
   </footer>
 
   <script>
