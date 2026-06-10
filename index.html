@@ -1007,10 +1007,15 @@
           </ol>
         </div>
         <form
-          id="consultForm"
+          action="https://api.web3forms.com/submit"
+          method="POST"
           aria-label="Consultation request form"
-          novalidate
         >
+          <input type="hidden" name="access_key" value="3a1dc0d5-d845-4627-be9e-2fa3a933a4d3" />
+          <input type="hidden" name="subject" value="New Consultation Request — Story Thread Editorial" />
+          <input type="hidden" name="from_name" value="Story Thread Editorial Website" />
+          <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off" />
+
           <div class="form__row">
             <div class="form__group">
               <label class="form__label" for="firstName">First Name</label>
@@ -1119,26 +1124,6 @@
       });
     });
 
-    // Consultation form → mailto
-    document.getElementById('consultForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const firstName = document.getElementById('firstName').value.trim();
-      const lastName  = document.getElementById('lastName').value.trim();
-      const email     = document.getElementById('email').value.trim();
-      const message   = document.getElementById('message').value.trim();
-
-      const subject = encodeURIComponent(
-        'Consultation Request from ' + firstName + ' ' + lastName
-      );
-      const body = encodeURIComponent(
-        'Name: ' + firstName + ' ' + lastName + '\n' +
-        'Email: ' + email + '\n\n' +
-        message
-      );
-
-      window.location.href =
-        'mailto:tarah.gibbs@gmail.com?subject=' + subject + '&body=' + body;
-    });
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
