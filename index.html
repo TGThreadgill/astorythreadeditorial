@@ -325,7 +325,6 @@
       flex-direction: column;
     }
     .book-item__cover {
-      aspect-ratio: 2/3;
       overflow: hidden;
       border-radius: var(--radius);
       background: var(--color-200);
@@ -333,6 +332,10 @@
       margin-bottom: 0.75rem;
       box-shadow: 0 2px 12px rgba(26,38,32,0.08);
       transition: transform 0.25s, box-shadow 0.25s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 200px;
     }
     .book-item:hover .book-item__cover {
       transform: translateY(-4px);
@@ -340,8 +343,10 @@
     }
     .book-item__cover img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
+      max-height: 280px;
+      object-fit: contain;
+      display: block;
       transition: opacity 0.2s;
     }
     .book-item__cover .book-item__badge {
@@ -497,7 +502,7 @@
       position: relative;
       z-index: 1;
       width: 100%;
-      aspect-ratio: 3/4;
+      aspect-ratio: 4/5;
       border-radius: var(--radius);
       background: var(--color-300);
       overflow: hidden;
@@ -1054,7 +1059,7 @@
         <div class="about__portrait-wrap">
           <div class="about__portrait-bg" aria-hidden="true"></div>
           <div class="about__portrait" aria-label="Portrait of Tarah Threadgill">
-            <img src="https://raw.githubusercontent.com/TGThreadgill/astorythreadeditorial/main/TThreadgill.avif" alt="Tarah Threadgill" style="width:100%;height:100%;object-fit:cover;" />
+            <img src="https://raw.githubusercontent.com/TGThreadgill/astorythreadeditorial/main/TThreadgill.avif" alt="Tarah Threadgill" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;" />
           </div>
         </div>
         <div>
@@ -1091,7 +1096,7 @@
         </svg>
         Instagram
       </a>
-      <a href="https://www.tiktok.com/@astorythread" target="_blank" rel="noopener" class="social-link" aria-label="TikTok profile">
+      <a href="http://www.tiktok.com/astorythread" target="_blank" rel="noopener" class="social-link" aria-label="TikTok profile">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/>
         </svg>
@@ -1102,7 +1107,7 @@
 
   <!-- ░░ FOOTER ░░ -->
   <footer class="footer">
-    <p>© <span id="year"></span> Story Thread Editorial · Tarah Threadgill
+    <p>© <span id="year"></span> Story Thread Editorial · Tarah Threadgill · Built for <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a></p>
   </footer>
 
   <script>
