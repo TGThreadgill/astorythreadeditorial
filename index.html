@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Story Thread Editorial | Book Editing</title>
+  <meta name="description" content="Professional developmental, copyediting, and storytelling services that refine your message and strengthen your narrative voice." />
+  <meta property="og:title" content="Story Thread Editorial | Book Editing" />
+  <meta property="og:description" content="Professional developmental, copyediting, and storytelling services that refine your message and strengthen your narrative voice." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://storythreadeditorial.com" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── TOKENS ─────────────────────────────── */
+    :root {
+      --color-50:  #F0F6F3;
+      --color-100: #E0EDE7;
+      --color-200: #D1E4DC;
+      --color-300: #C2DBD0;
+      --color-400: #B2D3C5;
+      --color-500: #A3CABA;
+      --color-600: #94C1AE;
+      --color-700: #85B8A3;
+      --color-800: #75AF98;
+      --color-900: #65A78E;
+      --color-950: #559E83;
+
+      --ink:       #1a2620;
+      --ink-mid:   #3a4e45;
+      --ink-light: #6b7f76;
+
+      --ff-display: 'Cormorant Garamond', Georgia, serif;
+      --ff-body:    'Inter', system-ui, sans-serif;
+
+      --radius: 4px;
+      --max-w: 1100px;
+      --section-gap: 7rem;
+    }
+
+    /* ─── RESET ──────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--color-50);
+      color: var(--ink);
+      font-family: var(--ff-body);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── NAV ────────────────────────────────── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(240, 246, 243, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-200);
+    }
+    .nav__inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav__logo {
+      font-family: var(--ff-display);
+      font-size: clamp(1rem, 3.5vw, 1.2rem);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: calc(100% - 60px);
+    }
+    .nav__links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav__links a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-mid);
+      transition: color 0.2s;
+    }
+    .nav__links a:hover { color: var(--color-950); }
+
+    .nav__hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 10px;
+      margin: -10px;
+      min-width: 44px;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav__hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--ink-mid);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ─── HERO ───────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 70% 50%, var(--color-200) 0%, transparent 70%),
+        var(--color-50);
+      z-index: 0;
+    }
+    /* The "thread" — signature element */
+    .hero__thread {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .hero__thread line {
+      stroke: var(--color-400);
+      stroke-width: 1;
+      stroke-dasharray: 6 10;
+      animation: thread-draw 2.5s ease-out forwards;
+    }
+    @keyframes thread-draw {
+      from { stroke-dashoffset: 3000; }
+      to   { stroke-dashoffset: 0; }
+    }
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 4rem 1.5rem 3rem;
+      width: 100%;
+    }
+    .hero__eyebrow {
+      font-family: var(--ff-body);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-950);
+      margin-bottom: 1.5rem;
+    }
+    .hero__title {
+      font-family: var(--ff-display);
+      font-size: clamp(2.6rem, 8vw, 7rem);
+      font-weight: 300;
+      line-height: 1.05;
+      color: var(--ink);
+      max-width: 700px;
+      margin-bottom: 1.5rem;
+    }
+    .hero__title em {
+      font-style: italic;
+      color: var(--color-950);
+    }
+    .hero__sub {
+      font-size: 1.05rem;
+      color: var(--ink-light);
+      max-width: 480px;
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+    }
+    .hero__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--color-950);
+      color: #fff;
+      padding: 0.85rem 2rem;
+      border-radius: var(--radius);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .hero__cta:hover {
+      background: var(--color-900);
+      transform: translateY(-1px);
+    }
+    .hero__cta svg { flex-shrink: 0; }
+
+    /* ─── SECTION WRAPPER ────────────────────── */
+    .section {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: var(--section-gap) 2rem;
+    }
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--color-200);
+      margin: 0 2rem;
+    }
+    .section__label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-950);
+      margin-bottom: 0.6rem;
+    }
+    .section__heading {
+      font-family: var(--ff-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+    .section__intro {
+      font-size: 1rem;
+      color: var(--ink-light);
+      max-width: 600px;
+      line-height: 1.8;
+      margin-bottom: 3rem;
+    }
+
+    /* ─── SERVICES ───────────────────────────── */
+    #services { background: var(--color-50); }
+    .services__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--color-200);
+      border: 1.5px solid var(--color-200);
+      border-radius: calc(var(--radius) + 2px);
+      overflow: hidden;
+    }
+    .service-card {
+      background: var(--color-50);
+      padding: 2.5rem 2rem;
+      transition: background 0.25s;
+    }
+    .service-card:hover { background: var(--color-100); }
+    .service-card__icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-200);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      color: var(--color-950);
+    }
+    .service-card__title {
+      font-family: var(--ff-display);
+      font-size: 1.45rem;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+      color: var(--ink);
+    }
+    .service-card__body {
+      font-size: 0.9rem;
+      color: var(--ink-light);
+      line-height: 1.8;
+    }
+
+    /* ─── PORTFOLIO ──────────────────────────── */
+    .portfolio__intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+    }
+    .portfolio__wishlist {
+      background: var(--color-100);
+      border-left: 3px solid var(--color-950);
+      padding: 1.75rem 1.5rem;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-size: 0.9rem;
+      color: var(--ink-mid);
+      line-height: 1.8;
+    }
+    .portfolio__wishlist strong {
+      display: block;
+      font-family: var(--ff-display);
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      color: var(--ink);
+    }
+    .book-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1.5rem;
+    }
+    .book-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .book-item__cover {
+      aspect-ratio: 2/3;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--color-200);
+      position: relative;
+      margin-bottom: 0.75rem;
+      box-shadow: 0 2px 12px rgba(26,38,32,0.08);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .book-item:hover .book-item__cover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(26,38,32,0.14);
+    }
+    .book-item__cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.2s;
+    }
+    .book-item__cover .book-item__badge {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      background: var(--color-950);
+      color: #fff;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 2px 6px;
+      border-radius: 2px;
+    }
+    .book-item__title {
+      font-family: var(--ff-display);
+      font-size: 0.95rem;
+      font-weight: 500;
+      line-height: 1.3;
+      color: var(--ink);
+      margin-bottom: 0.2rem;
+    }
+    .book-item__meta {
+      font-size: 0.72rem;
+      color: var(--ink-light);
+      line-height: 1.5;
+    }
+
+    /* ─── CONSULTATION ───────────────────────── */
+    #consultation {
+      background: var(--color-100);
+      border-top: 1px solid var(--color-200);
+      border-bottom: 1px solid var(--color-200);
+    }
+    #consultation .section {
+      padding-top: var(--section-gap);
+      padding-bottom: var(--section-gap);
+    }
+    .consult__grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .consult__steps {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .consult__steps li {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.9rem;
+      color: var(--ink-mid);
+      line-height: 1.6;
+    }
+    .consult__step-num {
+      flex-shrink: 0;
+      width: 26px;
+      height: 26px;
+      background: var(--color-950);
+      color: #fff;
+      border-radius: 50%;
+      font-size: 0.7rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .form__row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .form__group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .form__group.full { grid-column: 1 / -1; }
+    .form__label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--ink-mid);
+    }
+    .form__input,
+    .form__textarea {
+      background: var(--color-50);
+      border: 1.5px solid var(--color-300);
+      border-radius: var(--radius);
+      padding: 0.65rem 0.9rem;
+      font-family: var(--ff-body);
+      font-size: 1rem;
+      color: var(--ink);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      width: 100%;
+      -webkit-appearance: none;
+    }
+    .form__input:focus,
+    .form__textarea:focus {
+      outline: none;
+      border-color: var(--color-950);
+      box-shadow: 0 0 0 3px rgba(85, 158, 131, 0.15);
+    }
+    .form__textarea { resize: vertical; min-height: 120px; }
+    .form__submit {
+      margin-top: 1rem;
+      background: var(--color-950);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius);
+      padding: 0.85rem 2rem;
+      font-family: var(--ff-body);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .form__submit:hover {
+      background: var(--color-900);
+      transform: translateY(-1px);
+    }
+
+    /* ─── ABOUT ──────────────────────────────── */
+    .about__inner {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .about__portrait-wrap {
+      position: relative;
+    }
+    .about__portrait-bg {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      right: -8px;
+      bottom: -8px;
+      background: var(--color-200);
+      border-radius: var(--radius);
+      z-index: 0;
+    }
+    .about__portrait {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      aspect-ratio: 3/4;
+      border-radius: var(--radius);
+      background: var(--color-300);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .about__portrait-initials {
+      font-family: var(--ff-display);
+      font-size: 4rem;
+      font-weight: 300;
+      color: var(--color-950);
+      letter-spacing: 0.05em;
+    }
+    .about__name {
+      font-family: var(--ff-display);
+      font-size: 2.2rem;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 0.25rem;
+    }
+    .about__title-tag {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-950);
+      margin-bottom: 1.5rem;
+    }
+    .about__body {
+      font-size: 0.97rem;
+      color: var(--ink-mid);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+    .about__credentials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.5rem;
+    }
+    .about__credential {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: var(--color-200);
+      color: var(--ink-mid);
+      padding: 0.35rem 0.8rem;
+      border-radius: 20px;
+    }
+
+    /* ─── SOCIAL / FOOTER ────────────────────── */
+    .social-section {
+      background: var(--ink);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .social-section__label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-500);
+      margin-bottom: 0.6rem;
+    }
+    .social-section__heading {
+      font-family: var(--ff-display);
+      font-size: 2rem;
+      font-weight: 300;
+      color: #fff;
+      margin-bottom: 2rem;
+    }
+    .social-links {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius);
+      color: rgba(255,255,255,0.8);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+    .social-link:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: var(--color-600);
+      color: #fff;
+    }
+    .footer {
+      background: var(--ink);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+    .footer p {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.04em;
+    }
+    .footer a {
+      color: var(--color-600);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ─── RESPONSIVE ─────────────────────────── */
+    @media (max-width: 900px) {
+      .services__grid { grid-template-columns: 1fr; }
+      .portfolio__intro-grid { grid-template-columns: 1fr; }
+      .consult__grid { grid-template-columns: 1fr; }
+      .about__inner { grid-template-columns: 1fr; }
+      .about__portrait-wrap { max-width: 220px; }
+    }
+    @media (max-width: 680px) {
+      :root { --section-gap: 4rem; }
+      .hero { min-height: 80vh; }
+      .nav__links { display: none; }
+      .nav__links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0; right: 0;
+        background: var(--color-50);
+        border-bottom: 1px solid var(--color-200);
+        padding: 1.5rem 1.5rem;
+        gap: 1.25rem;
+        z-index: 99;
+      }
+      .nav__hamburger { display: flex; }
+      .form__row { grid-template-columns: 1fr; }
+      .social-links { flex-direction: column; align-items: stretch; padding: 0 1rem; }
+      .social-link { justify-content: center; padding: 0.75rem 1rem; }
+      .book-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+      .portfolio__wishlist { padding: 1.25rem 1rem; }
+      .section { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .section-divider { margin: 0 1.25rem; }
+      .hero__content { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .hero__sub { font-size: 0.95rem; }
+      .consult__steps li { font-size: 0.85rem; }
+      .about__portrait-wrap { max-width: 160px; }
+      .about__portrait-bg { right: -6px; bottom: -6px; top: 6px; left: 6px; }
+    }
+    @media (max-width: 380px) {
+      .hero__title { font-size: clamp(2.2rem, 9vw, 3rem); }
+      .book-grid { grid-template-columns: repeat(2, 1fr); }
+      .nav__logo { font-size: 0.95rem; }
+    }
+
+    /* ─── REDUCED MOTION ─────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      .hero__thread line { animation: none; stroke-dashoffset: 0; }
+    }
+
+    /* ─── TOUCH ENHANCEMENTS ─────────────────── */
+    @media (hover: none) {
+      .hero__cta:active     { background: var(--color-900); transform: scale(0.98); }
+      .form__submit:active  { background: var(--color-900); transform: scale(0.98); }
+      .social-link:active   { background: rgba(255,255,255,0.15); }
+      .book-item:active .book-item__cover { transform: translateY(-2px); }
+      .service-card:hover   { background: var(--color-50); }
+    }
+    * { -webkit-tap-highlight-color: transparent; }
+  </style>
+</head>
+<body>
+
+  <!-- ░░ NAV ░░ -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="#top" class="nav__logo">Story Thread Editorial</a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#consultation">Consult</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#connect">Connect</a></li>
+      </ul>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ░░ HERO ░░ -->
+  <header class="hero" id="top">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <svg class="hero__thread" preserveAspectRatio="none" viewBox="0 0 1 900" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <line x1="0.5" y1="0" x2="0.5" y2="900" />
+    </svg>
+    <div class="hero__content">
+      <p class="hero__eyebrow">Story Thread Editorial</p>
+      <h1 class="hero__title">Weaving <em>clarity</em><br>into every draft.</h1>
+      <p class="hero__sub">Professional developmental editing, copyediting, and beta reading — services that refine your message and strengthen your narrative voice.</p>
+      <a href="#consultation" class="hero__cta">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Request a Consultation
+      </a>
+    </div>
+  </header>
+
+  <!-- ░░ SERVICES ░░ -->
+  <hr class="section-divider" />
+  <section id="services">
+    <div class="section">
+      <p class="section__label">What I Offer</p>
+      <h2 class="section__heading">Available Services</h2>
+      <div class="services__grid">
+
+        <article class="service-card">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="14" height="14" rx="1.5" stroke="currentColor" stroke-width="1.4"/>
+              <path d="M5 6h8M5 9h6M5 12h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Developmental Editing</h3>
+          <p class="service-card__body">Comprehensive manuscript assessment and guidance aimed at enhancing overall structure, content coherence, and thematic development. My goal is to improve overall clarity and impact, ensuring that your work resonates effectively with your target audience.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 14.5L6.5 11M3 3.5l2 2M8 3h7M8 7.5h5M8 12h3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Copyediting</h3>
+          <p class="service-card__body">Detailed in-line comments aimed at refining your manuscript — ensuring grammatical accuracy, style consistency, vivid prose, light fact-checking, and adherence to applicable publishing guidelines. Your voice, polished.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 3h10a1 1 0 0 1 1 1v11l-2-1.5L11 15l-2-1.5L7 15l-2 1.5L3 15V4a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <path d="M6 7h6M6 10h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Beta / ARC Reading</h3>
+          <p class="service-card__body">A first look at unreleased manuscripts from a reader's perspective — gauging whether the story connects with intended audiences. As your ARC reader, I provide early review, build buzz around your new title, and help create visibility through online reviews.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ PORTFOLIO ░░ -->
+  <hr class="section-divider" />
+  <section id="portfolio">
+    <div class="section">
+      <p class="section__label">Selected Work</p>
+      <h2 class="section__heading">Editorial Portfolio</h2>
+
+      <div class="portfolio__intro-grid">
+        <div>
+          <p class="section__intro">Since 2020, I have been proud to provide editorial services to diverse clients across a range of genres.</p>
+        </div>
+        <div class="portfolio__wishlist">
+          <strong>Currently excited to read</strong>
+          Engaging adult or young adult fantasy and sci-fi with immersive, well-developed worlds where magic or technology influences society, power structures, and character identity. Found family is my favorite trope — especially bonds built through shared hardship, moral tension, or unlikely alliances. Strong female leads who are active, capable, and complex. Propulsive plots with high stakes and well-earned twists. Stories that are compulsively readable, emotionally grounded, and bold enough to take risks.
+        </div>
+      </div>
+
+      <div class="book-grid">
+
+        <!-- Coming Soon items -->
+        <div class="book-item">
+          <a href="https://www.amazon.com/Reign-Deluxe-Bethan-Croome/dp/1464280665/" target="_blank" rel="noopener" class="book-item__cover">
+            <img src="https://static.wixstatic.com/media/58a6ec_1377ea0037344c33b4c47bf76c2d48ed~mv2.webp/v1/fill/w_187,h_187,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/coming-soon-sign-blue-door-hanger-announcement-board-vector-new-arrival-concept-eps-coming.webp" alt="Reign by Bethan Croome — Coming Soon" loading="lazy" />
+            <span class="book-item__badge">2026</span>
+          </a>
+          <p class="book-item__title">Reign</p>
+          <p class="book-item__meta">Bethan Croome<br>Cosmo Reads, Sourcebooks · Coming 2026</p>
+        </div>
+
+        <div class="book-item">
+          <div class="book-item__cover">
+            <img src="https://static.wixstatic.com/media/58a6ec_1377ea0037344c33b4c47bf76c2d48ed~mv2.webp/v1/fill/w_187,h_187,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/coming-soon-sign-blue-door-hanger-announcement-board-vector-new-arrival-concept-eps-coming.webp" alt="58 Missions — Coming Soon" loading="lazy" />
+            <span class="book-item__badge">2026</span>
+          </div>
+          <p class="book-item__title">58 Missions</p>
+          <p class="book-item__meta">Lucilla Esham<br>Salt Water Media · Coming 2026</p>
+        </div>
+
+        <div class="book-item">
+          <div class="book-item__cover">
+            <img src="https://static.wixstatic.com/media/58a6ec_1377ea0037344c33b4c47bf76c2d48ed~mv2.webp/v1/fill/w_187,h_187,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/coming-soon-sign-blue-door-hanger-announcement-board-vector-new-arrival-concept-eps-coming.webp" alt="X-Thium: Unleashed — Coming Soon" loading="lazy" />
+            <span class="book-item__badge">2026</span>
+          </div>
+          <p class="book-item__title">X-Thium: Unleashed</p>
+          <p class="book-item__meta">CB Sted<br>Salt Water Media · Coming 2026</p>
+        </div>
+
+        <div class="book-item">
+          <a href="https://www.amazon.com/Parents-Guide-Raising-Lacrosse-Player/dp/162806465X/" target="_blank" rel="noopener" class="book-item__cover">
+            <img src="https://static.wixstatic.com/media/58a6ec_d2ccb81bd1884e718df220c1477a0020~mv2.jpg/v1/crop/x_0,y_27,w_755,h_735/fill/w_187,h_182,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Screenshot%202026-06-02%20at%2012_edited.jpg" alt="The Parents' Guide to Raising a Lacrosse Player" loading="lazy" />
+          </a>
+          <p class="book-item__title">The Parents' Guide to Raising a Lacrosse Player</p>
+          <p class="book-item__meta">Erica M. Dixon<br>Salt Water Media · Oct. 2025</p>
+        </div>
+
+        <div class="book-item">
+          <a href="https://www.amazon.com/Learning-Lifeguards-Building-Motivates-Struggling/dp/1956512624/" target="_blank" rel="noopener" class="book-item__cover">
+            <img src="https://static.wixstatic.com/media/58a6ec_ab2df593e3074d9db6403be92f540344~mv2.jpg/v1/crop/x_0,y_87,w_907,h_884/fill/w_187,h_182,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/71XG0B3pElL__SL1360_.jpg" alt="Learning Lifeguards by Sherri Nelson" loading="lazy" />
+          </a>
+          <p class="book-item__title">Learning Lifeguards</p>
+          <p class="book-item__meta">Sherri Nelson<br>Times 10 Publications · Nov. 2024</p>
+        </div>
+
+        <div class="book-item">
+          <a href="https://www.amazon.com/Kindness-Heroes-Ordinary-People-Extraordinary/dp/B0GQRJKYLG/" target="_blank" rel="noopener" class="book-item__cover">
+            <img src="https://static.wixstatic.com/media/58a6ec_5dfbba3a1bfe4c7796487e808ecd6b6a~mv2.png/v1/crop/x_0,y_47,w_735,h_736/fill/w_187,h_187,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Screenshot%202026-06-02%20at%201_00_16%E2%80%AFPM.png" alt="Kindness Heroes by Jackie Kurtz" loading="lazy" />
+          </a>
+          <p class="book-item__title">Kindness Heroes</p>
+          <p class="book-item__meta">Jackie Kurtz<br>Salt Water Media · Apr. 2026</p>
+        </div>
+
+        <div class="book-item">
+          <a href="https://www.amazon.com/Rainy-Day-Miracle-Remarkable-Healing/dp/B0FP77T7S3/" target="_blank" rel="noopener" class="book-item__cover">
+            <img src="https://static.wixstatic.com/media/58a6ec_cdbb6e81de0149f59aba32b262289203~mv2.jpg/v1/crop/x_0,y_94,w_880,h_856/fill/w_187,h_182,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/61iAkCW9-%2BL__SL1360_.jpg" alt="Rainy Day Miracle by Jill and Matt Cheatham" loading="lazy" />
+          </a>
+          <p class="book-item__title">Rainy Day Miracle</p>
+          <p class="book-item__meta">Jill & Matt Cheatham<br>Salt Water Media · Oct. 2025</p>
+        </div>
+
+        <div class="book-item">
+          <a href="https://www.amazon.com/Small-Wins-Big-Health-Healthier-ebook/dp/B0DFZR31J4/" target="_blank" rel="noopener" class="book-item__cover">
+            <img src="https://static.wixstatic.com/media/58a6ec_4cb80751ef144b3aa9135471b1cd62d4~mv2.jpg/v1/crop/x_0,y_224,w_1000,h_972/fill/w_187,h_182,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/81wnBhhlXwL__SL1500_.jpg" alt="Small Wins, Big Health by Bryan Holyfield" loading="lazy" />
+          </a>
+          <p class="book-item__title">Small Wins, Big Health</p>
+          <p class="book-item__meta">Bryan Holyfield<br>Times 10 Publications · Sept. 2024</p>
+        </div>
+
+        <div class="book-item">
+          <a href="https://www.amazon.com/Ode-Cleve-John-McKinney-ebook/dp/B0CVSJLBBB/" target="_blank" rel="noopener" class="book-item__cover">
+            <img src="https://static.wixstatic.com/media/58a6ec_87f75db759574e9bb120dd774e71b868~mv2.jpg/v1/crop/x_0,y_115,w_938,h_913/fill/w_187,h_182,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/81E6w8At9RL__SL1500_.jpg" alt="Ode to Cleve by John McKinney" loading="lazy" />
+          </a>
+          <p class="book-item__title">Ode to Cleve</p>
+          <p class="book-item__meta">John McKinney<br>My Word Publishing · Feb. 2024</p>
+        </div>
+
+        <div class="book-item">
+          <a href="https://www.amazon.com/Hacking-School-Discipline-Together-Responsibility/dp/1956512500/" target="_blank" rel="noopener" class="book-item__cover">
+            <img src="https://static.wixstatic.com/media/58a6ec_4eb25b03cb6b4279af41f3e3773c388d~mv2.png/v1/crop/x_0,y_16,w_1017,h_990/fill/w_187,h_182,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Screenshot%202024-01-10%20at%2011_42_25%E2%80%AFAM.png" alt="Hacking School Discipline by Jeffrey Benson" loading="lazy" />
+          </a>
+          <p class="book-item__title">Hacking School Discipline</p>
+          <p class="book-item__meta">Jeffrey Benson<br>Times 10 Publications · Jan. 2024</p>
+        </div>
+
+        <div class="book-item">
+          <a href="https://www.amazon.com/Dukes-Moonlit-Seduction-Regency-Romance-ebook/dp/B0CJMFJBP7/" target="_blank" rel="noopener" class="book-item__cover">
+            <img src="https://static.wixstatic.com/media/58a6ec_83361a3655df435398414ae482ae0c61~mv2.png/v1/crop/x_0,y_293,w_702,h_683/fill/w_187,h_182,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Screenshot%202024-01-09%20at%2010_27_27%E2%80%AFAM.png" alt="The Duke's Moonlit Seduction by Emme Albright" loading="lazy" />
+          </a>
+          <p class="book-item__title">The Duke's Moonlit Seduction</p>
+          <p class="book-item__meta">Emme Albright<br>My Word Publishing · Sept. 2023</p>
+        </div>
+
+        <div class="book-item">
+          <a href="https://www.amazon.com/Pebbles-Biggest-Number-STEM-Adventure/dp/1737818604/" target="_blank" rel="noopener" class="book-item__cover">
+            <img src="https://static.wixstatic.com/media/58a6ec_44acba37c26e465ab8998b585b8ee6f3~mv2.png/v1/crop/x_50,y_0,w_1036,h_1008/fill/w_187,h_182,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Screenshot%202024-01-10%20at%2011_27_42%E2%80%AFAM.png" alt="Pebbles and the Biggest Number by Joey Benun" loading="lazy" />
+          </a>
+          <p class="book-item__title">Pebbles and the Biggest Number</p>
+          <p class="book-item__meta">Joey Benun<br>My Word Publishing · Sept. 2023</p>
+        </div>
+
+        <div class="book-item">
+          <a href="https://www.amazon.com/Farm-Windows-Joel-Summers/dp/1628064765/" target="_blank" rel="noopener" class="book-item__cover">
+            <img src="https://static.wixstatic.com/media/58a6ec_9ecc0b96511b43a7a486b39855bed701~mv2.png/v1/crop/x_0,y_47,w_735,h_736/fill/w_187,h_187,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Screenshot%202026-06-02%20at%2012_40_54%E2%80%AFPM.png" alt="Farm Windows by Joel Summers" loading="lazy" />
+          </a>
+          <p class="book-item__title">Farm Windows</p>
+          <p class="book-item__meta">Joel Summers<br>Salt Water Media · Apr. 2026</p>
+        </div>
+
+        <div class="book-item">
+          <a href="https://www.amazon.com/Your-Words-Are-Fire-Culturally/dp/1956512683/" target="_blank" rel="noopener" class="book-item__cover">
+            <img src="https://static.wixstatic.com/media/58a6ec_aeb562be081d4acfa1440c3b7af91a71~mv2.jpg/v1/crop/x_0,y_145,w_971,h_945/fill/w_187,h_182,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/814RJwcm%2BbL__SL1500_.jpg" alt="Your Words Are Fire by Lissette Jacobson and Maurice McDavid" loading="lazy" />
+          </a>
+          <p class="book-item__title">Your Words Are Fire</p>
+          <p class="book-item__meta">Lissette Jacobson & Maurice McDavid<br>Times 10 Publications · May 2025</p>
+        </div>
+
+        <div class="book-item">
+          <a href="https://www.amazon.com/Into-Night-Jailbreak-Homicide-Marylands/dp/1628064587/" target="_blank" rel="noopener" class="book-item__cover">
+            <img src="https://static.wixstatic.com/media/58a6ec_e033b7f5b5bc48bf9732b81ae253a6ba~mv2.jpg/v1/crop/x_0,y_57,w_883,h_861/fill/w_187,h_182,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/71NjxN2r%2BPL_edited_edited.jpg" alt="Into the Night by Stephanie Fowler" loading="lazy" />
+          </a>
+          <p class="book-item__title">Into the Night</p>
+          <p class="book-item__meta">Stephanie Fowler<br>Salt Water Media · Nov. 2025</p>
+        </div>
+
+        <div class="book-item">
+          <a href="https://www.amazon.com/Small-Business-Blueprint-Step-Step-ebook/dp/B0DZZL7995/" target="_blank" rel="noopener" class="book-item__cover">
+            <img src="https://static.wixstatic.com/media/58a6ec_4cb80751ef144b3aa9135471b1cd62d4~mv2.jpg/v1/crop/x_0,y_145,w_971,h_945/fill/w_187,h_182,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/814RJwcm%2BbL__SL1500_.jpg" alt="Your Small Business Blueprint by Ron Neary" loading="lazy" />
+          </a>
+          <p class="book-item__title">Your Small Business Blueprint</p>
+          <p class="book-item__meta">Ron Neary<br>Times 10 Publications · Mar. 2025</p>
+        </div>
+
+        <div class="book-item">
+          <a href="https://www.amazon.com/Anti-Racist-Teaching-Framework-Diversity-Inclusion/dp/195651256X/" target="_blank" rel="noopener" class="book-item__cover">
+            <img src="https://static.wixstatic.com/media/58a6ec_ddd873141dec442194bbebb96ab38e38~mv2.jpg/v1/crop/x_0,y_29,w_907,h_884/fill/w_187,h_182,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/71DWkEt-rvL__SL1360_.jpg" alt="Anti-Racist Teaching by Symone James Abiola" loading="lazy" />
+          </a>
+          <p class="book-item__title">Anti-Racist Teaching</p>
+          <p class="book-item__meta">Symone James Abiola<br>Times 10 Publications · Aug. 2024</p>
+        </div>
+
+        <div class="book-item">
+          <a href="https://www.amazon.com/Hacking-Student-Motivation-Assessment-Progression/dp/1956512470/" target="_blank" rel="noopener" class="book-item__cover">
+            <img src="https://static.wixstatic.com/media/58a6ec_a79c1cec1630403ca44f290434ba5e12~mv2.png/v1/crop/x_0,y_4,w_753,h_732/fill/w_187,h_182,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Screenshot%202024-01-10%20at%2011_41_29%E2%80%AFAM.png" alt="Hacking Student Motivation by Tyler Rablin" loading="lazy" />
+          </a>
+          <p class="book-item__title">Hacking Student Motivation</p>
+          <p class="book-item__meta">Tyler Rablin<br>Times 10 Publications · Feb. 2024</p>
+        </div>
+
+        <div class="book-item">
+          <a href="https://www.amazon.com/Vain-Valour-Vanity-Justan-Autor-ebook/dp/B0CPYR9Q4B/" target="_blank" rel="noopener" class="book-item__cover">
+            <img src="https://static.wixstatic.com/media/58a6ec_645eee25908d45d7adba6088ea785805~mv2.jpg/v1/crop/x_0,y_309,w_906,h_882/fill/w_187,h_182,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/81nSKLk%2BzxL__SL1500_.jpg" alt="Vain and Valor Vol. 1 by Justan Autor" loading="lazy" />
+          </a>
+          <p class="book-item__title">Vain and Valor, Vol. 1</p>
+          <p class="book-item__meta">Justan Autor<br>Self-Publishing · Dec. 2023</p>
+        </div>
+
+        <div class="book-item">
+          <a href="https://www.amazon.com/Gratitude-Two-Hundred-Short-Poems/dp/B0CL5Q5WS9/" target="_blank" rel="noopener" class="book-item__cover">
+            <img src="https://static.wixstatic.com/media/58a6ec_595f28c5352d4830ad349da2989dbb97~mv2.png/v1/crop/x_0,y_180,w_674,h_656/fill/w_187,h_182,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Screenshot%202024-01-09%20at%204_59_15%E2%80%AFPM.png" alt="Gratitude by A.H. Morris" loading="lazy" />
+          </a>
+          <p class="book-item__title">Gratitude</p>
+          <p class="book-item__meta">A.H. Morris<br>My Word Publishing · Nov. 2023</p>
+        </div>
+
+        <div class="book-item">
+          <a href="https://www.amazon.com/last-light-before-extinction-stories-ebook/dp/B0B86SP35M/" target="_blank" rel="noopener" class="book-item__cover">
+            <img src="https://static.wixstatic.com/media/58a6ec_98ceeafcad754668b03d00bb3a45fb0f~mv2.png/v1/crop/x_0,y_11,w_713,h_694/fill/w_187,h_182,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Screenshot%202024-01-09%20at%205_00_38%E2%80%AFPM.png" alt="The Last Light Before Extinction by Coty Schwabe" loading="lazy" />
+          </a>
+          <p class="book-item__title">The Last Light Before Extinction</p>
+          <p class="book-item__meta">Coty Schwabe<br>Self-Publishing · July 2022</p>
+        </div>
+
+        <div class="book-item">
+          <a href="https://www.amazon.com/flames-theft-car-crashes-collected-ebook/dp/B0B85WVCJC/" target="_blank" rel="noopener" class="book-item__cover">
+            <img src="https://static.wixstatic.com/media/58a6ec_f5fe9e2c426a4b8dada5957d5ce48be3~mv2.png/v1/crop/x_0,y_175,w_455,h_444/fill/w_187,h_182,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Screenshot%202024-01-09%20at%205_01_14%E2%80%AFPM.png" alt="Flames, Theft, Car Crashes by Coty Schwabe" loading="lazy" />
+          </a>
+          <p class="book-item__title">Flames, Theft, Car Crashes</p>
+          <p class="book-item__meta">Coty Schwabe<br>Self-Publishing · July 2022</p>
+        </div>
+
+        <div class="book-item">
+          <a href="https://www.amazon.com/bearing-burden-existence-Coty-Schwabe-ebook/dp/B0B5CL38WY/" target="_blank" rel="noopener" class="book-item__cover">
+            <img src="https://static.wixstatic.com/media/58a6ec_0d137598134b442dadd27ef665bd6e49~mv2.png/v1/crop/x_0,y_64,w_707,h_688/fill/w_187,h_182,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Screenshot%202024-01-09%20at%205_01_47%E2%80%AFPM.png" alt="Bearing the Burden of Existence by Coty Schwabe" loading="lazy" />
+          </a>
+          <p class="book-item__title">Bearing the Burden of Existence</p>
+          <p class="book-item__meta">Coty Schwabe<br>Self-Publishing · July 2022</p>
+        </div>
+
+        <div class="book-item">
+          <a href="https://www.amazon.com/Hello-its-Me-Collection-Poems-ebook/dp/B09YJ213HB/" target="_blank" rel="noopener" class="book-item__cover">
+            <img src="https://static.wixstatic.com/media/58a6ec_3c481c0f61a24dbea6cee56e15b129c9~mv2.png/v1/crop/x_0,y_17,w_637,h_620/fill/w_187,h_182,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Screenshot%202024-01-09%20at%205_04_47%E2%80%AFPM.png" alt="Hello, It's Me by Ariyana Rogers" loading="lazy" />
+          </a>
+          <p class="book-item__title">Hello, It's Me</p>
+          <p class="book-item__meta">Ariyana Rogers<br>Self-Publishing · Apr. 2022</p>
+        </div>
+
+        <div class="book-item">
+          <a href="https://www.amazon.com/Love-Mental-Illness-psychosis-relationships-ebook/dp/B09TWYVPJG/" target="_blank" rel="noopener" class="book-item__cover">
+            <img src="https://static.wixstatic.com/media/58a6ec_f15b0769212b4c1a88d8feb99655bb25~mv2.png/v1/crop/x_0,y_96,w_663,h_644/fill/w_187,h_182,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Screenshot%202024-01-09%20at%205_02_36%E2%80%AFPM.png" alt="Love is a Mental Illness by Franco Cardiello" loading="lazy" />
+          </a>
+          <p class="book-item__title">Love is a Mental Illness</p>
+          <p class="book-item__meta">Franco Cardiello<br>Self-Publishing · Mar. 2022</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ CONSULTATION ░░ -->
+  <section id="consultation">
+    <div class="section">
+      <p class="section__label">Work With Me</p>
+      <h2 class="section__heading">Request a Consultation</h2>
+      <div class="consult__grid">
+        <div>
+          <p style="font-size:0.9rem;color:var(--ink-light);line-height:1.8;margin-bottom:2rem;">Please provide the following information where applicable so I can give you an accurate quote and timeline.</p>
+          <ol class="consult__steps">
+            <li>
+              <span class="consult__step-num">1</span>
+              <span>The <strong>genre and brief overview</strong> of your manuscript</span>
+            </li>
+            <li>
+              <span class="consult__step-num">2</span>
+              <span>The <strong>approximate word count</strong> of your manuscript (determines cost of each editing pass)</span>
+            </li>
+            <li>
+              <span class="consult__step-num">3</span>
+              <span>The <strong>type of editorial services</strong> you're interested in (developmental, copyediting, etc.)</span>
+            </li>
+            <li>
+              <span class="consult__step-num">4</span>
+              <span>Any <strong>timeframe or deadline requests</strong></span>
+            </li>
+          </ol>
+        </div>
+        <form
+          id="consultForm"
+          aria-label="Consultation request form"
+          novalidate
+        >
+          <div class="form__row">
+            <div class="form__group">
+              <label class="form__label" for="firstName">First Name</label>
+              <input class="form__input" type="text" id="firstName" name="firstName" required autocomplete="given-name" />
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="lastName">Last Name</label>
+              <input class="form__input" type="text" id="lastName" name="lastName" required autocomplete="family-name" />
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="form__group full">
+              <label class="form__label" for="email">Your Email</label>
+              <input class="form__input" type="email" id="email" name="email" required autocomplete="email" />
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="form__group full">
+              <label class="form__label" for="message">Message</label>
+              <textarea class="form__textarea" id="message" name="message" required placeholder="Include your genre, word count, desired services, and any deadlines…"></textarea>
+            </div>
+          </div>
+          <button type="submit" class="form__submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ ABOUT ░░ -->
+  <hr class="section-divider" />
+  <section id="about">
+    <div class="section">
+      <p class="section__label">The Editor</p>
+      <h2 class="section__heading">About Me</h2>
+      <div class="about__inner">
+        <div class="about__portrait-wrap">
+          <div class="about__portrait-bg" aria-hidden="true"></div>
+          <div class="about__portrait" aria-label="Portrait placeholder for Tarah Threadgill">
+            <span class="about__portrait-initials" aria-hidden="true">TT</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="about__name">Tarah Threadgill</h3>
+          <p class="about__title-tag">Developmental Editor &amp; Copyeditor</p>
+          <p class="about__body">As a developmental and copy editor, I collaborate with authors to bring their manuscripts to life. I provide services and feedback on narrative structure, plot, pacing, product design, fidelity to CMOS guidelines, and research on market trends. I also conduct background research to ensure the accuracy and quality of each title.</p>
+          <p class="about__body">With years of editorial experience, I honed my skills working with diverse genres, styles, and voices. I believe in the power of words — and that the right ones in the right order can mend or break a heart.</p>
+          <p class="about__body">I am also a secondary English teacher with over a decade of teaching various courses. I gained valuable skills in project management, leadership, team building, communication, curriculum development, instructional design, assessment writing, and data analysis.</p>
+          <p class="about__body">My mission is to inspire and empower students and writers to express themselves creatively and confidently.</p>
+          <div class="about__credentials">
+            <span class="about__credential">MFA, Creative Writing — Old Dominion University</span>
+            <span class="about__credential">MA, Secondary Education — Georgia College &amp; State University</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ SOCIAL ░░ -->
+  <section id="connect" class="social-section">
+    <p class="social-section__label">Find Me Online</p>
+    <h2 class="social-section__heading">Connect on Social Media</h2>
+    <div class="social-links">
+      <a href="http://www.linkedin.com/in/tarahthreadgill" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn profile">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+        </svg>
+        LinkedIn
+      </a>
+      <a href="http://www.instagram.com/astorythread" target="_blank" rel="noopener" class="social-link" aria-label="Instagram profile">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm.003 1.44c2.136 0 2.39.009 3.233.048.78.036 1.203.166 1.485.276.374.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.276 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.036.78-.166 1.203-.276 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.47 2.47 0 0 1-.92-.598 2.47 2.47 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.843-.039 1.097-.048 3.233-.048z"/>
+          <path d="M8 3.892a4.108 4.108 0 1 0 0 8.216 4.108 4.108 0 0 0 0-8.216m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334m5.23-.337a.96.96 0 1 1-1.92 0 .96.96 0 0 1 1.92 0"/>
+        </svg>
+        Instagram
+      </a>
+      <a href="http://www.tiktok.com/astorythread" target="_blank" rel="noopener" class="social-link" aria-label="TikTok profile">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/>
+        </svg>
+        TikTok
+      </a>
+    </div>
+  </section>
+
+  <!-- ░░ FOOTER ░░ -->
+  <footer class="footer">
+    <p>© <span id="year"></span> Story Thread Editorial · Tarah Threadgill · Built for <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a></p>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', open);
+    });
+    // Close on link click
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Consultation form → mailto
+    document.getElementById('consultForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const firstName = document.getElementById('firstName').value.trim();
+      const lastName  = document.getElementById('lastName').value.trim();
+      const email     = document.getElementById('email').value.trim();
+      const message   = document.getElementById('message').value.trim();
+
+      const subject = encodeURIComponent(
+        'Consultation Request from ' + firstName + ' ' + lastName
+      );
+      const body = encodeURIComponent(
+        'Name: ' + firstName + ' ' + lastName + '\n' +
+        'Email: ' + email + '\n\n' +
+        message
+      );
+
+      window.location.href =
+        'mailto:tarah.gibbs@gmail.com?subject=' + subject + '&body=' + body;
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.service-card, .book-item, .about__inner').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(16px)';
+      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
